@@ -8,7 +8,7 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "MinMax TicTacToe",
+  title: "MiniMax TicTacToe",
   description:
     "An implementation of the minimax algorithm in the tic tac toe game",
 };

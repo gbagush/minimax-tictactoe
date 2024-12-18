@@ -10,8 +10,8 @@ export default function Alert({ status, isOpen, onClose }: AlertProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="flex flex-col items-center w-full bg-cyan-950 px-12 py-8 shadow-lg animate-fade-in text-center">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 animate-fade-in">
+      <div className="flex flex-col items-center w-full bg-cyan-950 px-12 py-8 shadow-lg text-center">
         <div
           className={`text-4xl font-bold mb-2 ${
             status === "ai"
