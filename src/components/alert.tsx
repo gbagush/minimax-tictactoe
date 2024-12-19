@@ -1,7 +1,7 @@
 "use client";
 
 interface AlertProps {
-  status: "user" | "ai" | "draw";
+  status: Status;
   isOpen: boolean;
   onClose: () => void;
 }

@@ -13,10 +13,10 @@ export default function Home() {
   const [gameOver, setGameOver] = useState(false);
   const [alert, setAlert] = useState({
     show: false,
-    status: "" as "ai" | "user" | "draw",
+    status: "" as Status,
   });
 
-  const showAlert = (status: "ai" | "user" | "draw") => {
+  const showAlert = (status: Status) => {
     setAlert({ show: true, status });
   };
 
@@ -35,6 +35,9 @@ export default function Home() {
     if (role === "ai") {
       const game = new TicTacToe(newBoard);
       const bestMove = game.getBestMove();
+
+      console.log(`AI: ${bestMove + 1}`);
+
       newBoard[bestMove] = "X";
       setBoard([...newBoard]);
       setCurrentRole("user");
@@ -68,10 +71,15 @@ export default function Home() {
       const newBoard = [...board];
       newBoard[index] = currentRole === "user" ? "O" : "X";
 
+      console.log(`Player: ${index + 1}`);
+
       const game = new TicTacToe(newBoard);
       if (!checkGameEnd(game, newBoard)) {
         const bestMove = game.getBestMove();
         newBoard[bestMove] = "X";
+
+        console.log(`AI: ${bestMove + 1}`);
+
         setBoard([...newBoard]);
         game.board = newBoard;
         checkGameEnd(game, newBoard);
